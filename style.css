@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 :root{
-    --ff-primary:"Source Sans Pro",sans-serif;
-    --ff-secondary:"Source Code Pro",monospace;
+    --ff-primary:"Lora", serif;
+    --ff-secondary:"Roboto Slab", serif;
 
     --fw-reg:300;
     --fw-bold:900;
