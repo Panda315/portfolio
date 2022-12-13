@@ -38,6 +38,7 @@ html{
 
 /*General styles*/
 body{
+    white-space: normal;
     background-color: var(--clr-light);
     color:var(--clr-dark);
     margin:0;
@@ -237,7 +238,7 @@ header{
 }
 
 .intro__img{
-    box-shadow:var(--bs)
+    box-shadow:var(--bs);
 }
 
 .section__subtitle--intro{
@@ -245,6 +246,10 @@ header{
 }
 
 @media (min-width:600px){
+    .body{
+        white-space: normal;
+    }
+
     .intro{
         display: grid;
         width:min-content;  
@@ -327,8 +332,8 @@ header{
 
 .about-me__img{
     box-shadow : var(--bs);
-    min-height:300px;
-    min-width: 400px;
+    max-height:500px;
+    max-width: 800px;
 }
 
 @media(min-width:800px){
@@ -353,7 +358,8 @@ header{
         left:-1em;
         width: calc(100% + 10em);
         padding-left: 1em;
-        padding-right: calc(200px + 2em);
+        padding-right:0;
+        /* padding-right: calc(200px+2em); */
     }
 
     .about-me__img{
@@ -371,6 +377,7 @@ header{
     background-color: var(--clr-dark);
     color:var(--clr-light);
     text-align:center;
+    width:100%;
 }
 
 .section__subtitle--work{
@@ -380,25 +387,27 @@ header{
 }
 
 .portfolio__item{
-    height: 400px;
+    max-height: 400px;
     margin-left:2em;
     margin-bottom: 1em;
-    width: 500px;
+    max-width: 500px;
     display: flex;
-    background:var(--clr-accent);
     overflow: hidden;
 }
+
+
 .portfolio{
     display: grid;
     grid-template-columns:repeat(auto-fit,minmax(500px,1fr));
 }
 
 .portfolio__img{
+    display: flex;
     transition : transform 750ms cubic-bezier(.5,0,.5,1),
     opacity 250ms linear;
+    max-width: 500px;
+    max-height: 500px;
 }
-
-
 
 .portfolio__item:focus{
     position: relative;
@@ -452,6 +461,18 @@ footer{
 
 .social-list__link{
     padding:0 .5em;
+}
+
+/*overflow causing slow motion on swiping*/
+@media screen and (max-width:480px){
+    body{
+        white-space: normal;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    .portfolio__img{
+        max-width: 300px;
+    }
 }
 
 
