@@ -16,8 +16,8 @@
 
     --fs-h1:3rem;
     --fs-h2:2.25rem;
-    --fs-h3:1.25rem;
-    --fs-body:1rem;
+    --fs-h3:1.5rem;
+    --fs-body:1.25rem;
 
     --bs:0.25em 0.25em 0.75em rgba(0,0,25),
          0.125em 1.125em 0.25em rgba(0,0,0,.125);
@@ -34,6 +34,7 @@
 
 html{
     scroll-behavior: smooth;
+    margin:0px;
 }
 
 /*General styles*/
@@ -41,7 +42,7 @@ body{
     white-space: normal;
     background-color: var(--clr-light);
     color:var(--clr-dark);
-    margin:0;
+    margin:0px;
     font-family : var(--ff-primary);
     font-size:var(--fs-body);
     line-height:1.6;
@@ -310,10 +311,16 @@ header{
 .service{
     max-width: 500px;
     margin : 0 auto;
+    font-size: 1.5rem;
 }
 
-@media(min-width:800px){
+.service h3{
+    font-size: 1.75rem;
+}
+
+@media (min-width:800px){
     .services{
+        font-size: 1rem;
         display:flex;
         max-width:1000px;
         margin-left:auto;
@@ -328,6 +335,7 @@ header{
 .about-me{
     max-width: 1000px;
     margin: 0 auto;
+    font-size: 1.25rem;
 }
 
 .about-me__img{
@@ -336,7 +344,7 @@ header{
     max-width: 800px;
 }
 
-@media(min-width:800px){
+@media only screen and (min-width:800px){
     .about-me{
         display: grid;
         grid-template-columns: 1fr 200px;
@@ -356,10 +364,10 @@ header{
         height: fit-content;
         position: relative; 
         left:-1em;
-        width: calc(100% + 10em);
+        width: calc(100%+10em);
         padding-left: 1em;
         padding-right:0;
-        /* padding-right: calc(200px+2em); */
+        padding-right: calc(200px+2em);
     }
 
     .about-me__img{
@@ -395,6 +403,28 @@ header{
     overflow: hidden;
 }
 
+/*overflow causing slow motion on swiping*/
+@media only screen and (max-width:540px){
+    body{
+        white-space: normal;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .portfolio__img{
+        width: 300px;
+        max-width: 400px;
+    }
+}
+
+@media only screen and (min-width:550px){
+    .portfolio__img{
+        width: 400px; 
+        max-width: 500px;
+        max-height: 500px;
+    }
+}
+
 
 .portfolio{
     display: grid;
@@ -405,8 +435,6 @@ header{
     display: flex;
     transition : transform 750ms cubic-bezier(.5,0,.5,1),
     opacity 250ms linear;
-    max-width: 500px;
-    max-height: 500px;
 }
 
 .portfolio__item:focus{
@@ -463,17 +491,6 @@ footer{
     padding:0 .5em;
 }
 
-/*overflow causing slow motion on swiping*/
-@media screen and (max-width:480px){
-    body{
-        white-space: normal;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
-    .portfolio__img{
-        max-width: 300px;
-    }
-}
 
 
 
