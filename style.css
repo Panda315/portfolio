@@ -186,10 +186,12 @@ header{
 
 .nav-open .hamburger{
     transform:rotate(.625turn);
+    background-color: var(--clr-accent);
 }
 
 .nav-open .hamburger:before{
     transform : rotate(90deg) translateX(-6px);
+    background-color: var(--clr-accent);
 }
 
 .nav-open .hamburger:after{
@@ -204,9 +206,9 @@ header{
 .hamburger,
 .hamburger::before,
 .hamburger::after{
-    background: var(--clr-accent);
-    width:2em;
-    height: 3px;
+    background: black;
+    width:4em;
+    height: 7px;
     border-radius: 1em;
     transition:transform 250ms ease-in-out;
 }
@@ -221,11 +223,11 @@ header{
 }
 
 .hamburger::before{
-    top:6px;
+    top:10px;
 }
 
 .hamburger::after{
-    bottom:6px;
+    bottom:10px;
 }
 
 .intro{
@@ -374,6 +376,7 @@ header{
 
 .portfolio__item{
     height: 400px;
+    margin-left:2em;
     margin-bottom: 1em;
     width: 500px;
     display: flex;
