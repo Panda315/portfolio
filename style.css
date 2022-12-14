@@ -411,9 +411,14 @@ header{
         overflow-y: scroll;
     }
 
+    .about-me__img{
+        width:300px;
+        max-width:500px;
+    }
+
     .portfolio__img{
-        width: 300px;
-        max-width: 400px;
+        width: 250px;
+        max-width: 350px;
     }
 }
 
@@ -491,8 +496,9 @@ footer{
     padding:0 .5em;
 }
 
-
-
+.my-services, .about-me, .my-work, footer{
+    width: 100vw;
+}
 
 
 
